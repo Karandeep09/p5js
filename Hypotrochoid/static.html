@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+
+  </head>
+  <body>
+    <script>
+var p,q;
+var w,H;
+var obj=[]
+function setup() {
+  w=800;
+  H=800;
+  createCanvas(w,H);
+ var a,b,c;
+  a=random(Math.min(w,H)/2);
+  b=random(a);
+  c=random(b);
+  a=Math.floor(a);
+  b=Math.floor(b);
+  c=Math.floor(c);
+  console.log(a+" "+b+" "+c)
+  for(var i=0;i<=2*Math.PI*lcm(a,b)/a;i+=0.1)
+  { obj.push(new particle(a,b,c,i));
+  }
+}
+
+function draw() {
+  background(220); 
+  for(var i=1;i<obj.length;i++)
+  {  p= obj[i-1].x;
+     q= obj[i-1].y;
+     obj[i].show();
+  }
+  
+}
+function particle(R,r,h,phi)
+{ this.x = (R-r)*cos(phi)+h*cos((R-r)*phi/r)+w/2;
+  this.y = (R-r)*sin(phi)-h*sin((R-r)*phi/r)+H/2;
+ this.show =function()
+ {  strokeWeight(0.5);
+    line(p,q,this.x,this.y);
+ }
+} 
+function lcm(a,b)
+{ return a*b/gcd(a,b);
+}
+function gcd(a,b)
+{ if(b==0)
+   return a;
+  return gcd(b,a%b);
+}
+    </script>
+  </body>
+</html>
