@@ -17,9 +17,9 @@ function setup() {
   H=800;
   createCanvas(w,H);
  var a,b,c;
-  a=random(Math.min(w,H)/2);
-  b=random(Math.min(w,H)/2);
-  c=random(Math.min(b,Math.min(w,H)/2));
+  a=300;
+  b=random(a);
+  c=random(b);
   console.log(a+" "+b+" "+c)
   for(var i=0;i<=200*Math.PI;i+=0.1)
   { obj.push(new particle(a,b,c,i));
