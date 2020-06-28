@@ -9,7 +9,7 @@
   </head>
   <body>
     <script>
- var p,q;
+var p,q,pp,qq,ppp,qqq;
 var w,H;
 var obj=[]
 function setup() {
@@ -20,7 +20,7 @@ function setup() {
   a=300;
   b=random(a);
   c=random(b);
-  console.log(a+" "+b+" "+c)
+  console.log(a+" "+b+" "+c);
   for(var i=0;i<=200*Math.PI;i+=0.1)
   { obj.push(new particle(a,b,c,i));
   }
@@ -28,9 +28,13 @@ function setup() {
 j = 1;
 function draw() {
   background(220); 
-  for(var i=1;i<j;i++)
-  {  p= obj[i-1].x;
-     q= obj[i-1].y;
+  for(var i=3;i<j;i+=3)
+  {  p= obj[i-3].x;
+     q= obj[i-3].y;
+     pp=obj[i-2].x;
+     qq=obj[i-2].y;
+     ppp=obj[i-1].x;
+     qqq=obj[i-1].y;
      obj[i].show();
   }
   j++; 
@@ -41,8 +45,10 @@ function particle(R,r,h,phi)
 { this.x = (R-r)*cos(phi)+h*cos((R-r)*phi/r)+w/2;
   this.y = (R-r)*sin(phi)-h*sin((R-r)*phi/r)+H/2;
  this.show =function()
- {  strokeWeight(1);
-    line(p,q,this.x,this.y);
+ {  strokeWeight(1); 
+    line(p,q,pp,qq); 
+    line(pp,qq,ppp,qqq);
+    line(ppp,qqq,this.x,this.y);
  }
 }
     </script>
