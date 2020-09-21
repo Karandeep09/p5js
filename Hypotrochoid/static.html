@@ -16,6 +16,7 @@ function setup() {
   w=800;
   H=800;
   createCanvas(w,H);
+  obj.splice(0,obj.length);
  var a,b,c;
   a=random(Math.min(w,H)/2);
   b=random(a);
@@ -27,17 +28,18 @@ function setup() {
   for(var i=0;i<=2*Math.PI*lcm(a,b)/a;i+=0.1)
   { obj.push(new particle(a,b,c,i));
   }
-}
-
-function draw() {
   background(220); 
   for(var i=1;i<obj.length;i++)
   {  p= obj[i-1].x;
      q= obj[i-1].y;
      obj[i].show();
   }
+}
+
+function draw() {
   
 }
+setInterval(setup,2000);
 function particle(R,r,h,phi)
 { this.x = (R-r)*cos(phi)+h*cos((R-r)*phi/r)+w/2;
   this.y = (R-r)*sin(phi)-h*sin((R-r)*phi/r)+H/2;
