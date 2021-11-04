@@ -9,7 +9,15 @@ var part = [];
 function draw() {
   
   background(0);
-
+  if(part.length == 0) {
+    var x = random(0,400);
+    var y = random(0,100);
+    var col = createVector(random(50,255),255,70);
+    
+  for(var i = 0; i < 500; i++){
+    part.push(new Particle(x,y,50,col));
+  }
+} 
   for(let i = 0; i < part.length; i++){
     if(part[i].life <= 0){
       part.splice(i,1);
