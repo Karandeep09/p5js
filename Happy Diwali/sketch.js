@@ -10,8 +10,8 @@ function draw() {
   
   background(0);
   if(part.length == 0) {
-    var x = random(0,400);
-    var y = random(0,100);
+    var x = random(0,windowWidth);
+    var y = random(0,windowHeight/2);
     var col = createVector(random(50,255),255,70);
     
   for(var i = 0; i < 500; i++){
@@ -49,7 +49,7 @@ function Particle(x,y, life, col){
   }
   this.show = function(x){
     strokeWeight(6);
-    stroke(col.x - x*col.x*0.5,col.y - x*col.y*0.5, col.z - x*col.z*0.5);
+    stroke(col.x - x*col.x,col.y - x*col.y, col.z - x*col.z);
     point(this.pos.x,this.pos.y);
   }
 }
