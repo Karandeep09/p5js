@@ -1,6 +1,6 @@
 var g;
 function setup() {
-  createCanvas(displayWidth, displayHeight);
+  createCanvas(windowWidth, windowHeight);
   background(0);
   g = createVector(0,0.2);
 }
