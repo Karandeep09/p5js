@@ -28,7 +28,8 @@ function setup() {
   for(var i=0;i<=2*Math.PI*lcm(a,b)/a;i+=0.1)
   { obj.push(new particle(a,b,c,i));
   }
-  background(220); 
+  //background(220); 
+  stroke(0,0,255);
   for(var i=1;i<obj.length;i++)
   {  p= obj[i-1].x;
      q= obj[i-1].y;
