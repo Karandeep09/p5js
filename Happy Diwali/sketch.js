@@ -2,7 +2,7 @@ var g;
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(0);
-  g = createVector(0,0.2);
+  g = createVector(0,0.6);
 }
 
 var part = [];
