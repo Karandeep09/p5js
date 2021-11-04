@@ -51,7 +51,7 @@ function mousePressed(){
   var y = random(0,100);
   var col = createVector(random(50,255),255,70);
   
-  for(var i = 0; i < 100; i++){
+  for(var i = 0; i < 500; i++){
     part.push(new Particle(mouseX,mouseY,50,col));
   }
 
