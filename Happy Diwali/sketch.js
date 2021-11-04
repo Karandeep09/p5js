@@ -29,7 +29,7 @@ function draw() {
 function Particle(x,y, life, col){
   this.pos = createVector(x,y);
   this.vel = p5.Vector.random2D();
-  this.k = random(0,7)
+  this.k = random(0,10)
   this.vel.x *= this.k;
   this.vel.y *= this.k;
   this.life = life;
@@ -51,7 +51,7 @@ function mousePressed(){
   var y = random(0,100);
   var col = createVector(random(50,255),255,70);
   
-  for(var i = 0; i < 1000; i++){
+  for(var i = 0; i < 100; i++){
     part.push(new Particle(mouseX,mouseY,50,col));
   }
 
